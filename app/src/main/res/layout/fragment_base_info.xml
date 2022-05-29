@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.forms.BaseInfoFragment">
+
+    <TextView
+        android:id="@id/text_view_title"
+        style="@style/Title"
+        android:layout_centerHorizontal="true"
+        android:text="@string/moshakhasat_melk" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/relative_layout"
+        android:layout_below="@id/text_view_title"
+        android:background="@drawable/border_white_1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/relative_layout_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/medium_dp"
+                android:background="@drawable/border_gray_1"
+                android:padding="@dimen/low_dp">
+
+                <LinearLayout
+                    android:id="@+id/linear_layout_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/user_type" />
+
+                    <Spinner
+                        android:id="@+id/spinner_1"
+                        style="@style/Spinner"
+                        android:layout_width="0dp"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/noe_vagozari" />
+
+                    <Spinner
+                        android:id="@+id/spinner_2"
+                        style="@style/Spinner"
+                        android:layout_width="0dp"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_layout_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linear_layout_1">
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/sifoon_100" />
+
+                    <EditText
+                        android:id="@+id/edit_text_sifoon100"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        tools:ignore="Autofill,LabelFor" />
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/sifoon_125" />
+
+                    <EditText
+                        android:id="@+id/edit_text_sifoon125"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        tools:ignore="Autofill,LabelFor" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_layout_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linear_layout_2">
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/sifoon_150" />
+
+                    <EditText
+                        android:id="@+id/edit_text_sifoon150"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        tools:ignore="Autofill,LabelFor" />
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/sifoon_200" />
+
+                    <EditText
+                        android:id="@+id/edit_text_sifoon200"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        tools:ignore="Autofill,LabelFor" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_layout_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linear_layout_3">
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/qotre_ensheab" />
+
+                    <Spinner
+                        android:id="@+id/spinner_3"
+                        style="@style/Spinner"
+                        android:layout_width="0dp"
+                        android:layout_weight="1" />
+
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/qotr_fazelab" />
+
+                    <Spinner
+                        android:id="@+id/spinner_5"
+                        style="@style/Spinner"
+                        android:layout_width="0dp"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linear_layout_4"
+                    android:weightSum="4">
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/zarfiat_qaradadi" />
+
+                    <EditText
+                        android:id="@+id/edit_text_zarfiat_qaradadi"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        android:maxLength="8"
+                        tools:ignore="Autofill,LabelFor" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relative_layout_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relative_layout_1"
+                android:layout_margin="@dimen/medium_dp"
+                android:background="@drawable/border_gray_1"
+                android:padding="@dimen/low_dp">
+
+                <LinearLayout
+                    android:id="@+id/linear_layout_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/parvane" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.5" />
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.5"
+                        android:text="@string/parvane_number" />
+
+                    <EditText
+                        android:id="@+id/edit_text_pari_number"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:inputType="phone"
+                        android:maxLength="8"
+                        tools:ignore="Autofill,LabelFor" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_layout_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linear_layout_5">
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/estelam_shahrdari" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.5" />
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.5"
+                        android:text="@string/sodur_date" />
+
+                    <EditText
+                        android:id="@+id/edit_text_sodur_date"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:editable="false"
+                        android:gravity="center"
+                        android:inputType="none"
+                        android:maxLength="10"
+                        tools:ignore="Autofill,LabelFor,TextFields" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_layout_7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linear_layout_6">
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/ezharat_motaqazi" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.5" />
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:text="@string/pelak" />
+
+                    <EditText
+                        android:id="@+id/edit_text_pelak"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        android:maxLength="8"
+                        tools:ignore="Autofill,LabelFor" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/linear_layout_8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linear_layout_7">
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/ensheab_gheire_daem" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.5" />
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:text="@string/code_new" />
+
+                    <EditText
+                        android:id="@+id/edit_text_code_new"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        tools:ignore="Autofill,LabelFor" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/linear_layout_9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linear_layout_8">
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/document" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.5" />
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:text="@string/code_kaf" />
+
+                    <EditText
+                        android:id="@+id/edit_text_code_kaf"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        tools:ignore="Autofill,LabelFor" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/linear_layout_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linear_layout_9">
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="مجوز عدم تولی" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.5" />
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.5"
+                        android:text="@string/sanad_number" />
+
+                    <EditText
+                        android:id="@+id/edit_text_sanad_number"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        android:maxLength="8"
+                        tools:ignore="Autofill,LabelFor" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linear_layout_10">
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="قرارداد آماده سازی" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox7"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.5" />
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.5"
+                        android:text="@string/qarardad" />
+
+                    <EditText
+                        android:id="@+id/edit_text_qarardad"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        android:maxLength="8"
+                        tools:ignore="Autofill,LabelFor" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relative_layout_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relative_layout_2"
+                android:layout_margin="@dimen/medium_dp"
+                android:background="@drawable/border_gray_1"
+                android:padding="@dimen/low_dp">
+
+                <LinearLayout
+                    android:id="@+id/linear_layout_9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/arse_kol" />
+
+                    <EditText
+                        android:id="@+id/edit_text_arse"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.75"
+                        android:inputType="number"
+                        tools:ignore="Autofill,LabelFor" />
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.25"
+                        android:text="@string/number_maskooni" />
+
+                    <EditText
+                        android:id="@+id/edit_text_tedad_maskooni"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        tools:ignore="Autofill,LabelFor" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_layout_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linear_layout_9">
+
+                    <TextView
+                        android:id="@+id/text_view_tedad_saier"
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/other_number" />
+
+                    <EditText
+                        android:id="@+id/edit_text_tedad_saier"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.75"
+                        android:inputType="numberSigned"
+                        tools:ignore="Autofill,LabelFor" />
+
+                    <TextView
+                        android:id="@+id/text_view_tedad_tejari"
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.25"
+                        android:text="@string/tedad_tejari" />
+
+                    <EditText
+                        android:id="@+id/edit_text_tedad_tejari"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        tools:ignore="Autofill,LabelFor" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relative_layout_3"
+                android:layout_margin="@dimen/medium_dp"
+                android:background="@drawable/border_gray_1"
+                android:padding="@dimen/low_dp">
+
+                <LinearLayout
+                    android:id="@+id/linear_layout_12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/aian_kol" />
+
+                    <EditText
+                        android:id="@+id/edit_text_aian_kol"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        tools:ignore="Autofill,LabelFor" />
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/ayan_maskooni" />
+
+                    <EditText
+                        android:id="@+id/edit_text_aian_maskooni"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        tools:ignore="Autofill,LabelFor" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_layout_13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linear_layout_12">
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/arzesh_mantaghe" />
+
+                    <EditText
+                        android:id="@+id/text_view_arzesh_melk"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:editable="false"
+                        android:inputType="none"
+                        tools:ignore="Autofill,LabelFor" />
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/aian_non_maskouni" />
+
+                    <EditText
+                        android:id="@+id/edit_text_aian_non_maskooni"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        tools:ignore="Autofill,LabelFor" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linear_layout_13">
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/noe_takhfif" />
+
+                    <Spinner
+                        android:id="@+id/spinner_4"
+                        style="@style/Spinner"
+                        android:layout_width="0dp"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/taxfif_number" />
+
+                    <EditText
+                        android:id="@+id/edit_text_tedad_takhfif"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:inputType="phone"
+                        android:maxLength="8"
+                        tools:ignore="Autofill,LabelFor" />
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/medium_dp"
+        android:layout_marginBottom="@dimen/medium_dp">
+
+        <Button
+            android:id="@+id/button_pre"
+            style="@style/Button.Negative"
+            android:text="@string/previous" />
+
+        <Button
+            android:id="@+id/button_submit"
+            style="@style/Button.Positive"
+            android:layout_alignParentEnd="true"
+            android:text="@string/second_info" />
+    </RelativeLayout>
+</RelativeLayout>

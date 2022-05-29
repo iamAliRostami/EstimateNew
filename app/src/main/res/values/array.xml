@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string-array name="menu">
+        <item>@string/home</item>
+        <item>@string/send_request</item>
+        <item>@string/download_information</item>
+        <item>@string/form1</item>
+        <item>@string/upload_information</item>
+        <item>@string/help</item>
+        <item>@string/exit</item>
+    </string-array>
+
+    <array name="icons">
+        <item>@drawable/image_home</item>
+        <item>@drawable/image_request</item>
+        <item>@drawable/image_download_menu</item>
+        <item>@drawable/image_form</item>
+        <item>@drawable/image_upload_menu</item>
+        <item>@drawable/image_help</item>
+        <item>@drawable/image_exit</item>
+    </array>
+    <string-array name="search_option">
+        <item>@string/eshterak</item>
+        <item> </item>
+        <item>@string/counter_body_number</item>
+        <item>@string/name</item>
+        <item>@string/page_number</item>
+    </string-array>
+    <string-array name="menu_jens_loole">
+        <item>چدن</item>
+        <item>پلی اتیلن</item>
+    </string-array>
+    <string-array name="menu_qotr_loole">
+        <item tools:ignore="TypographyFractions">1/2</item>
+        <item tools:ignore="TypographyFractions">3/4</item>
+        <item>1</item>
+        <item>1.2</item>
+        <item>1.5</item>
+        <item>2</item>
+        <item>3</item>
+        <item>5</item>
+        <item>6</item>
+        <item>8</item>
+        <item>10</item>
+        <item>12</item>
+    </string-array>
+</resources>

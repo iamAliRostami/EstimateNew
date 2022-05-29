@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_white_1"
+    android:padding="@dimen/medium_dp"
+    tools:context=".fragments.dialog.TejarihaSayerFragment">
+
+    <TextView
+        android:id="@id/text_view_title"
+        style="@style/Title"
+        android:layout_centerHorizontal="true"
+        android:text="@string/tejari_sayer" />
+
+    <RelativeLayout
+        android:id="@+id/relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_title"
+        android:layout_marginBottom="@dimen/medium_dp"
+        android:background="@drawable/border_gray_1"
+        android:padding="@dimen/medium_dp">
+
+        <LinearLayout
+            android:id="@+id/linear_layout_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/low_dp">
+
+            <Spinner
+                android:id="@+id/spinner_1"
+                style="@style/Spinner"
+                android:layout_width="0dp"
+                android:layout_weight="1" />
+
+            <EditText
+                android:id="@+id/edit_text_noe_shoql"
+                style="@style/EditTextForm"
+                android:layout_width="0dp"
+                android:layout_marginStart="@dimen/small_dp"
+                android:layout_weight="1"
+                android:hint="@string/noe_shoql"
+                android:nextFocusDown="@id/edit_text_vahed"
+                tools:ignore="Autofill,TextFields" />
+
+            <EditText
+                android:id="@+id/edit_text_vahed"
+                style="@style/EditTextForm"
+                android:layout_width="0dp"
+                android:layout_marginStart="@dimen/low_dp"
+                android:layout_weight="1"
+                android:hint="@string/tedad_vahed"
+                android:inputType="numberSigned"
+                android:nextFocusDown="@id/edit_text_vahed_mohasebe"
+                tools:ignore="Autofill,TextFields" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_layout_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear_layout_1">
+
+            <EditText
+                android:id="@+id/edit_text_vahed_mohasebe"
+                style="@style/EditTextForm"
+                android:layout_width="0dp"
+                android:layout_marginStart="@dimen/low_dp"
+                android:layout_weight="1"
+                android:hint="@string/vahed_mohasebe"
+                android:inputType="text"
+                android:nextFocusDown="@id/edit_text_a2"
+                tools:ignore="Autofill,TextFields" />
+
+            <EditText
+                android:id="@+id/edit_text_a2"
+                style="@style/EditTextForm"
+                android:layout_width="0dp"
+                android:layout_marginStart="@dimen/low_dp"
+                android:layout_weight="1"
+                android:hint="@string/a_2"
+                android:inputType="text"
+                tools:ignore="Autofill,TextFields" />
+
+            <EditText
+                android:id="@+id/edit_text_capacity"
+                style="@style/EditTextForm"
+                android:layout_width="0dp"
+                android:layout_marginStart="@dimen/low_dp"
+                android:layout_weight="1"
+                android:hint="@string/capacity"
+                android:inputType="text"
+                tools:ignore="Autofill,TextFields" />
+
+            <ImageView
+                android:id="@+id/image_view_plus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="@dimen/low_dp"
+                android:src="@drawable/image_plus"
+                tools:ignore="ContentDescription" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_tejariha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear_layout_2"
+            tools:listitem="@layout/item_tejari" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button_submit"
+        style="@style/Button.Positive"
+        android:layout_below="@id/relative_layout"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="0dp"
+        android:text="@string/submit" />
+</RelativeLayout>

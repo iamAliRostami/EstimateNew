@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_white_1"
+    tools:context=".fragments.dialog.AddDocumentFragment">
+
+    <LinearLayout
+        android:id="@+id/linear_layout_1"
+        style="@style/SearchLinearLayout">
+
+        <TextView
+            style="@style/SearchTextView"
+            android:layout_weight="0.5"
+            android:text="@string/name" />
+
+        <TextView
+            android:id="@+id/edit_text_name"
+            style="@style/SearchEditText" />
+
+        <TextView
+            style="@style/SearchTextView"
+            android:text="@string/family" />
+
+        <TextView
+            android:id="@+id/edit_text_family"
+            style="@style/SearchEditText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_layout_2"
+        style="@style/SearchLinearLayout"
+        android:layout_below="@id/linear_layout_1">
+
+        <TextView
+            style="@style/SearchTextView"
+            android:layout_width="wrap_content"
+            android:layout_weight="0"
+            android:text="@string/address" />
+
+        <TextView
+            android:id="@+id/edit_text_address"
+            style="@style/SearchEditText"
+            android:layout_width="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/SearchLinearLayout"
+        android:layout_below="@id/linear_layout_2">
+
+        <TextView
+            style="@style/SearchTextView"
+            android:text="@string/shomare_peygiri" />
+
+        <TextView
+            android:id="@+id/edit_text_track_number"
+            style="@style/SearchTextView"
+            android:background="@drawable/border_gray_3"
+            android:padding="@dimen/medium_dp" />
+
+        <Button
+            android:id="@+id/button_send"
+            style="@style/ButtonSubmit.Fragment"
+            android:layout_gravity="center"
+            android:layout_margin="0dp"
+            android:background="@drawable/border_green_2"
+            android:text="@string/add_document"
+            android:textSize="@dimen/text_size_medium" />
+    </LinearLayout>
+</RelativeLayout>

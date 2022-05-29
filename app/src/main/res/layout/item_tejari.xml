@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/medium_dp"
+    android:background="@drawable/border_white_1">
+
+    <ImageView
+        android:id="@+id/image_view_minus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/image_minus"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/text_view_karbari"
+        style="@style/TitleSmall"
+        android:layout_width="0dp"
+        android:layout_weight="1.5"
+        android:padding="0dp"
+        android:text="@string/user_type" />
+
+    <TextView
+        android:id="@+id/text_view_noe_shoql"
+        style="@style/TitleSmall"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:padding="0dp"
+        android:text="@string/noe_shoql" />
+
+    <TextView
+        android:id="@+id/text_view_tedad_vahed"
+        style="@style/TitleSmall"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:padding="0dp"
+        android:text="@string/tedad_vahed" />
+
+    <TextView
+        android:id="@+id/text_view_vahed_mohasebe"
+        style="@style/TitleSmall"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:padding="0dp"
+        android:text="@string/vahed_mohasebe" />
+
+    <TextView
+        android:id="@+id/text_view_a2"
+        style="@style/TitleSmall"
+        android:layout_width="0dp"
+        android:layout_weight="0.5"
+        android:padding="0dp"
+        android:text="@string/a_2" />
+</LinearLayout>

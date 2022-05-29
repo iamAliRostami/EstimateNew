@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/vector"
+            android:title="نقشه وکتور"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/roads"
+            android:title="نقشه راه ها"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/satellite"
+            android:title="نقشه ماهواره ای"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/osm"
+            android:title="نقشه osm"
+            app:showAsAction="never" />
+    </group>
+</menu>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.LoginActivity">
+
+    <View
+        android:id="@+id/image_view_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_120sdp"
+        android:background="?attr/colorPrimary" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_10sdp"
+        android:layout_below="@id/image_view_top"
+        android:background="?attr/colorPrimaryDark" />
+
+    <ImageView
+        android:id="@+id/image_view_person"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_75sdp"
+        android:src="@drawable/img_profile"
+        tools:ignore="ContentDescription" />
+
+    <LinearLayout
+        android:id="@+id/linear_layout_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image_view_person"
+        android:layout_marginLeft="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/low_dp"
+        android:layout_marginRight="@dimen/_50sdp"
+        android:layout_marginBottom="@dimen/low_dp"
+        android:background="@drawable/border_gray_2">
+
+        <ImageView
+            android:id="@+id/image_view_username"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/img_user"
+            tools:ignore="ContentDescription" />
+
+        <EditText
+            android:id="@+id/edit_text_username"
+            style="@style/InputGray"
+            android:hint="@string/username"
+            android:inputType="text"
+            android:lines="1"
+            tools:ignore="Autofill" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_layout_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear_layout_username"
+        android:layout_marginLeft="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/low_dp"
+        android:layout_marginRight="@dimen/_50sdp"
+        android:layout_marginBottom="@dimen/low_dp"
+        android:background="@drawable/border_gray_2">
+
+        <ImageView
+            android:id="@+id/image_view_password"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/img_password"
+            tools:ignore="ContentDescription" />
+
+        <EditText
+            android:id="@+id/edit_text_password"
+            style="@style/InputGray"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            tools:ignore="Autofill" />
+
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/check_box_save"
+        style="@style/CheckBox"
+        android:layout_below="@id/linear_layout_password"
+        android:layout_marginLeft="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/low_dp"
+        android:layout_marginRight="@dimen/_50sdp"
+        android:checked="true"
+        android:text="@string/save" />
+
+    <Button
+        android:id="@+id/button_login"
+        style="@style/ButtonLogin"
+        android:layout_below="@id/check_box_save"
+        android:text="@string/login" />
+
+    <ImageView
+        android:id="@+id/image_view_logo"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_above="@id/text_view_version"
+        android:layout_marginBottom="@dimen/huge_dp"
+        android:src="@drawable/img_login_logo"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/text_view_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linear_layout_footer"
+        android:layout_centerInParent="true"
+        android:textColor="@color/text_color_dark" />
+
+    <include layout="@layout/footer" />
+</RelativeLayout>

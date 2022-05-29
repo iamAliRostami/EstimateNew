@@ -1,0 +1,201 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    splits {
+        abi {
+            exclude 'x86'
+            exclude 'x86_64'
+            exclude 'mips'
+            exclude 'mips64'
+            exclude 'armeabi'
+            exclude 'armeabi-v8a'
+        }
+    }
+    packagingOptions {
+        exclude 'AndroidManifest.xml'
+        exclude 'lib/x86/libopencv_java3.so'
+        exclude 'lib/x86_64/libopencv_java3.so'
+        exclude 'lib/mips/libopencv_java3.so'
+        exclude 'lib/mips64/libopencv_java3.so'
+        exclude 'lib/armeabi/libopencv_java3.so'
+//        exclude 'lib/armeabi-v7a/libopencv_java3.so'
+        exclude 'lib/arm64-v8a/libopencv_java3.so'
+
+        exclude 'lib/x86/libruntimecore.so'
+        exclude 'lib/x86_64/libruntimecore.so'
+        exclude 'lib/mips/libruntimecore.so'
+        exclude 'lib/mips64/libruntimecore.so'
+        exclude 'lib/armeabi/libruntimecore.so'
+//        exclude 'lib/armeabi-v7a/libruntimecore.so'
+        exclude 'lib/arm64-v8a/libruntimecore.so'
+
+        exclude 'lib/x86/libc++_shared.so'
+        exclude 'lib/x86_64/libc++_shared.so'
+        exclude 'lib/mips/libc++_shared.so'
+        exclude 'lib/mips64/libc++_shared.so'
+        exclude 'lib/armeabi/libc++_shared.so'
+//        exclude 'lib/armeabi-v7a/libc++_shared.so'
+        exclude 'lib/arm64-v8a/libc++_shared.so'
+
+        exclude 'lib/x86/libruntimecore_java.so'
+        exclude 'lib/x86_64/libruntimecore_java.so'
+        exclude 'lib/mips/libruntimecore_java.so'
+        exclude 'lib/mips64/libruntimecore_java.so'
+        exclude 'lib/armeabi/libruntimecore_java.so'
+//        exclude 'lib/armeabi-v7a/libruntimecore_java.so'
+        exclude 'lib/arm64-v8a/libruntimecore_java.so'
+
+        exclude 'lib/x86/libfilament-jni.so'
+        exclude 'lib/x86_64/libfilament-jni.so'
+        exclude 'lib/mips/libfilament-jni.so'
+        exclude 'lib/mips64/libfilament-jni.so'
+        exclude 'lib/armeabi/libfilament-jni.so'
+//        exclude 'lib/armeabi-v7a/libfilament-jni.so'
+        exclude 'lib/arm64-v8a/libfilament_jni.so'
+
+        exclude 'lib/x86/libsceneform_animation.so'
+        exclude 'lib/x86_64/libsceneform_animation.so'
+        exclude 'lib/mips/libsceneform_animation.so'
+        exclude 'lib/mips64/libsceneform_animation.so'
+        exclude 'lib/armeabi/libsceneform_animation.so'
+//        exclude 'lib/armeabi-v7a/libsceneform_animation.so'
+        exclude 'lib/arm64-v8a/libsceneform_animation.so'
+
+        exclude 'lib/x86/libarsceneview_jni.so'
+        exclude 'lib/x86_64/libarsceneview_jni.so'
+        exclude 'lib/mips/libarsceneview_jni.so'
+        exclude 'lib/mips64/libarsceneview_jni.so'
+        exclude 'lib/armeabi/libarsceneview_jni.so'
+//        exclude 'lib/armeabi-v7a/libarsceneview_jni.so'
+        exclude 'lib/arm64-v8a/libarsceneview_jni.so'
+
+        exclude 'lib/x86/libarcore_sdk_jni.so'
+        exclude 'lib/x86_64/libarcore_sdk_jni.so'
+        exclude 'lib/mips/libarcore_sdk_jni.so'
+        exclude 'lib/mips64/libarcore_sdk_jni.so'
+        exclude 'lib/armeabi/libarcore_sdk_jni.so'
+//        exclude 'lib/armeabi-v7a/libarcore_sdk_jni.so'
+        exclude 'lib/arm64-v8a/libarcore_sdk_jni.so'
+
+        exclude 'lib/x86/libarcore_sdk_c.so'
+        exclude 'lib/x86_64/libarcore_sdk_c.so'
+        exclude 'lib/mips/libarcore_sdk_c.so'
+        exclude 'lib/mips64/libarcore_sdk_c.so'
+        exclude 'lib/armeabi/libarcore_sdk_c.so'
+//        exclude 'lib/armeabi-v7a/libarcore_sdk_c.so'
+        exclude 'lib/arm64-v8a/libarcore_sdk_c.so'
+    }
+    compileSdk 31
+    signingConfigs {
+        config {
+            keyAlias 'ali_angel'
+            keyPassword 'kaka019930'
+            storeFile file('D:/keys/MyFourthKey.jks')
+            storePassword 'kaka019930'
+        }
+    }
+    defaultConfig {
+        applicationId "com.leon.estimate_new"
+        minSdk 23
+        targetSdk 31
+        versionCode 2
+        versionName "2.01.01.14"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation":
+                                     "$projectDir/schemas".toString()]
+            }
+        }
+        sourceSets {
+            androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
+        }
+    }
+
+    buildTypes {
+        release {
+            debuggable true
+            signingConfig signingConfigs.config
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            multiDexEnabled true
+        }
+        debug {
+            debuggable true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        dataBinding = true
+        viewBinding true
+    }
+    buildToolsVersion '31.0.0'
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.6.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+
+    implementation 'com.google.android.gms:play-services-location:19.0.1'
+    implementation 'com.google.android.material:material:1.6.0'
+    implementation 'com.google.code.gson:gson:2.9.0'
+    implementation 'com.cocoahero.android:geojson:1.0.1@jar'
+
+    implementation 'com.esri.arcgisruntime:arcgis-android-toolkit:100.11.0'
+    implementation 'com.esri.arcgisruntime:arcgis-android:100.11.0'
+
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.2'
+    implementation 'com.squareup.okhttp3:okhttp:4.2.2'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+
+
+    implementation 'android.arch.persistence.room:runtime:1.1.1'
+    annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
+
+
+    implementation 'com.github.mayuce:AndroidDocumentScanner:1.4'
+    implementation 'com.github.ali-sardari:PersianRangeDatePicker:1.2.1'
+    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+    implementation 'com.github.GrenderG:Toasty:1.5.0'
+
+
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'com.facebook.shimmer:shimmer:0.5.0@aar'
+
+    implementation 'gun0912.ted:tedpermission:1.0.3'
+    implementation 'com.kyanogen.signatureview:signature-view:1.2'
+
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.auth0.android:jwtdecode:2.0.1'
+    implementation group: 'com.itextpdf', name: 'itextpdf', version: '5.5.13.1'
+
+    annotationProcessor("javax.annotation:javax.annotation-api:1.3.2")
+    // Libraries For Dependency Injection Using Dagger 2
+    implementation 'com.google.dagger:dagger:2.42'
+    implementation 'com.google.dagger:dagger-android:2.42'
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.42'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.42'
+
+    implementation project(':openCVLibrary')
+
+}

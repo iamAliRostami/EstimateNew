@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_white_1"
+    android:padding="@dimen/medium_dp"
+    tools:context=".fragments.dialog.ValueFragment">
+
+    <TextView
+        android:id="@id/text_view_title"
+        style="@style/Title"
+        android:layout_centerHorizontal="true"
+        android:text="@string/arzesh_mantaghe" />
+
+    <RelativeLayout
+        android:id="@+id/relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_title"
+        android:layout_marginBottom="@dimen/medium_dp"
+        android:background="@drawable/border_gray_1">
+
+        <LinearLayout
+            android:id="@+id/linear_layout_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/TitleSmall"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:text="@string/block" />
+
+            <Spinner
+                android:id="@+id/spinner_1"
+                style="@style/Spinner"
+                android:layout_width="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                style="@style/TitleSmall"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:text="@string/gozar" />
+
+            <Spinner
+                android:id="@+id/spinner_2"
+                style="@style/Spinner"
+                android:layout_width="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_layout_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear_layout_1">
+
+            <TextView
+                style="@style/TitleSmall"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/maskooni" />
+
+            <TextView
+                style="@style/TitleSmall"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/tejari" />
+
+            <TextView
+                style="@style/TitleSmall"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/edari_dolati" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_layout_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear_layout_2">
+
+            <EditText
+                android:id="@+id/edit_text_maskooni"
+                style="@style/EditTextForm"
+                android:layout_width="0dp"
+                android:layout_margin="@dimen/small_dp"
+                android:layout_weight="1"
+                android:hint="@string/zero"
+                android:inputType="numberSigned"
+                tools:ignore="Autofill,LabelFor" />
+
+            <EditText
+                android:id="@+id/edit_text_tejari"
+                style="@style/EditTextForm"
+                android:layout_width="0dp"
+                android:layout_margin="@dimen/small_dp"
+                android:layout_weight="1"
+                android:hint="@string/zero"
+                android:inputType="numberSigned"
+                tools:ignore="Autofill,LabelFor" />
+
+            <EditText
+                android:id="@+id/edit_text_edari"
+                style="@style/EditTextForm"
+                android:layout_width="0dp"
+                android:layout_margin="@dimen/small_dp"
+                android:layout_weight="1"
+                android:hint="@string/zero"
+                android:inputType="numberSigned"
+                tools:ignore="Autofill,LabelFor" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_layout_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear_layout_3">
+
+            <TextView
+                style="@style/TitleSmall"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/omoumi" />
+
+            <TextView
+                style="@style/TitleSmall"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/sanati" />
+
+            <TextView
+                style="@style/TitleSmall"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/hotel" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_layout_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear_layout_4">
+
+            <EditText
+                android:id="@+id/edit_text_omumi"
+                style="@style/EditTextForm"
+                android:layout_width="0dp"
+                android:layout_margin="@dimen/small_dp"
+                android:layout_weight="1"
+                android:hint="@string/zero"
+                android:inputType="numberSigned"
+                tools:ignore="Autofill,LabelFor" />
+
+            <EditText
+                android:id="@+id/edit_text_sanati"
+                style="@style/EditTextForm"
+                android:layout_width="0dp"
+                android:layout_margin="@dimen/small_dp"
+                android:layout_weight="1"
+                android:hint="@string/zero"
+                android:inputType="numberSigned"
+                tools:ignore="Autofill,LabelFor" />
+
+            <EditText
+                android:id="@+id/edit_text_hotel"
+                style="@style/EditTextForm"
+                android:layout_width="0dp"
+                android:layout_margin="@dimen/small_dp"
+                android:layout_weight="1"
+                android:hint="@string/zero"
+                android:inputType="numberSigned"
+                tools:ignore="Autofill,LabelFor" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/text_view_count"
+        style="@style/TitleSmall"
+        android:layout_below="@id/relative_layout"
+        android:layout_marginEnd="@dimen/medium_dp"
+        android:layout_toStartOf="@id/button_counting" />
+
+    <Button
+        android:id="@+id/button_counting"
+        style="@style/Button.Positive"
+        android:layout_below="@id/relative_layout"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="0dp"
+        android:text="@string/counting" />
+</RelativeLayout>

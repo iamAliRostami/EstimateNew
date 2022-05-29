@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/medium_dp"
+    tools:context=".fragments.documents.TakePhotoFragment">
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:id="@+id/text_view_title"
+        style="@style/TitleSmall"
+        android:layout_toEndOf="@id/progress_bar"
+        android:text="@string/document_received" />
+
+    <GridView
+        android:id="@+id/grid_view_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/text_view_continue"
+        android:layout_below="@+id/text_view_title"
+        android:background="@drawable/border_gray_3"
+        android:horizontalSpacing="@dimen/low_dp"
+        android:nestedScrollingEnabled="true"
+        android:numColumns="2"
+        android:padding="@dimen/low_dp"
+        android:verticalSpacing="@dimen/low_dp"
+        tools:listitem="@layout/item_image" />
+
+    <TextView
+        android:id="@+id/text_view_continue"
+        style="@style/TitleSmall"
+        android:layout_above="@id/linear_layout_confirm"
+        android:text="@string/to_continue" />
+
+    <LinearLayout
+        android:id="@+id/linear_layout_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/border_gray_1"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/low_dp"
+            android:layout_weight="1"
+            android:src="@drawable/icon_finder_camera"
+            tools:ignore="ContentDescription" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/low_dp"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:id="@+id/linear_layout_take_photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_white_1"
+                android:padding="@dimen/low_dp">
+
+                <Button
+                    android:id="@+id/button_pick"
+                    style="@style/Button.Neutral"
+                    android:layout_width="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:text="@string/pick_an_image" />
+
+                <Spinner
+                    android:id="@+id/spinner_title"
+                    style="@style/Spinner"
+                    android:layout_below="@id/button_pick"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/medium_dp"
+                    android:layout_marginEnd="@dimen/medium_dp"
+                    android:spinnerMode="dialog" />
+
+                <Button
+                    android:id="@+id/button_upload"
+                    style="@style/Button.Positive"
+                    android:layout_width="match_parent"
+                    android:layout_below="@id/spinner_title"
+                    android:text="@string/upload_image"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/button_accepted"
+                style="@style/Button.Negative"
+                android:layout_width="match_parent"
+                android:layout_below="@id/linear_layout_take_photo"
+                android:text="@string/final_accepted" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

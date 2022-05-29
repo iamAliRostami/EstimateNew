@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.forms.PersonalFragment">
+
+    <TextView
+        android:id="@id/text_view_title"
+        style="@style/Title"
+        android:layout_centerHorizontal="true"
+        android:text="@string/moshakhasat_malek" />
+
+    <LinearLayout
+        android:id="@+id/linear_layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_title"
+        android:background="@drawable/border_gray_1"
+        android:baselineAligned="false">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_margin="@dimen/medium_dp"
+            android:layout_weight="1"
+            android:background="@drawable/border_white_1">
+
+            <TextView
+                android:id="@+id/text_view_track_number_title"
+                style="@style/BaseTitleForm"
+                android:text="@string/shomare_peygiri" />
+
+            <TextView
+                android:id="@+id/text_view_track_number"
+                style="@style/BaseForm"
+                android:layout_below="@id/text_view_track_number_title" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_margin="@dimen/medium_dp"
+            android:layout_weight="1.1"
+            android:background="@drawable/border_white_1">
+
+            <TextView
+                android:id="@+id/text_view_bill_id_title"
+                style="@style/BaseTitleForm"
+                android:text="@string/bill_id" />
+
+            <TextView
+                android:id="@+id/text_view_bill_id"
+                style="@style/BaseForm"
+                android:layout_below="@id/text_view_bill_id_title" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_margin="@dimen/medium_dp"
+            android:layout_weight="1"
+            android:background="@drawable/border_white_1">
+
+            <TextView
+                android:id="@+id/text_view_zone_title"
+                style="@style/BaseTitleForm"
+                android:text="@string/zone" />
+
+            <TextView
+                android:id="@+id/text_view_zone"
+                style="@style/BaseForm"
+                android:layout_below="@id/text_view_zone_title" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear_layout_title"
+        android:background="@drawable/border_white_1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/relative_layout_base_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/low_dp"
+                android:background="@drawable/border_gray_1"
+                android:padding="@dimen/low_dp">
+
+                <LinearLayout
+                    android:id="@+id/linear_layout_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.75"
+                        android:text="@string/name" />
+
+                    <EditText
+                        android:id="@+id/edit_text_name"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:inputType="text"
+                        android:nextFocusDown="@id/edit_text_family"
+                        tools:ignore="Autofill,LabelFor" />
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.25"
+                        android:text="@string/family" />
+
+                    <EditText
+                        android:id="@+id/edit_text_family"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:inputType="text"
+                        android:nextFocusDown="@id/edit_text_father_name"
+                        tools:ignore="Autofill,LabelFor" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_layout_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linear_layout_1">
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.75"
+                        android:text="@string/father_name" />
+
+                    <EditText
+                        android:id="@+id/edit_text_father_name"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:inputType="text"
+                        android:nextFocusDown="@id/edit_text_shenasname"
+                        tools:ignore="Autofill,LabelFor" />
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.25"
+                        android:text="@string/shenasname" />
+
+                    <EditText
+                        android:id="@+id/edit_text_shenasname"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:inputType="number"
+                        android:nextFocusDown="@id/edit_text_nation_number"
+                        tools:ignore="Autofill,LabelFor" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linear_layout_2">
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.75"
+                        android:text="@string/nation_code" />
+
+                    <EditText
+                        android:id="@+id/edit_text_nation_number"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:nextFocusDown="@id/edit_text_postal_code"
+                        android:text="@string/ten_zero"
+                        tools:ignore="Autofill,LabelFor" />
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.25"
+                        android:text="@string/postal_code" />
+
+                    <EditText
+                        android:id="@+id/edit_text_postal_code"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:inputType="number"
+                        android:nextFocusDown="@id/edit_text_mobile"
+                        tools:ignore="Autofill,LabelFor" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relative_layout_base_info"
+                android:layout_margin="@dimen/low_dp"
+                android:background="@drawable/border_gray_1"
+                android:padding="@dimen/low_dp">
+
+                <LinearLayout
+                    android:id="@+id/linear_layout_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.75"
+                        android:text="@string/radif" />
+
+                    <EditText
+                        android:id="@+id/edit_text_radif"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:enabled="false"
+                        android:inputType="number"
+                        android:textColor="?android:textColor"
+                        tools:ignore="Autofill,LabelFor" />
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.25"
+                        android:text="@string/eshterak" />
+
+                    <EditText
+                        android:id="@+id/edit_text_eshterak"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:enabled="false"
+                        android:inputType="number"
+                        android:textColor="?android:textColor"
+                        tools:ignore="Autofill,LabelFor" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_layout_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linear_layout_4">
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.75"
+                        android:text="@string/mobile_number" />
+
+                    <EditText
+                        android:id="@+id/edit_text_mobile"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:inputType="phone"
+                        android:maxLength="11"
+                        android:nextFocusDown="@id/edit_text_phone"
+                        tools:ignore="Autofill,LabelFor" />
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.25"
+                        android:text="@string/phone_number" />
+
+                    <EditText
+                        android:id="@+id/edit_text_phone"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:inputType="phone"
+                        android:maxLength="8"
+                        android:nextFocusDown="@id/edit_text_address"
+                        tools:ignore="Autofill,LabelFor" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linear_layout_5"
+                    android:layout_marginTop="@dimen/small_dp">
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_gravity="top"
+                        android:layout_weight="0.75"
+                        android:text="@string/address" />
+
+                    <EditText
+                        android:id="@+id/edit_text_address"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:gravity="start|top"
+                        android:inputType="textMultiLine"
+                        android:lines="7"
+                        android:nextFocusDown="@id/edit_text_description"
+                        tools:ignore="Autofill,LabelFor" />
+
+                    <TextView
+                        style="@style/TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_gravity="top"
+                        android:layout_weight="1.25"
+                        android:text="@string/description" />
+
+                    <EditText
+                        android:id="@+id/edit_text_description"
+                        style="@style/EditTextForm"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:gravity="start|top"
+                        android:inputType="textMultiLine"
+                        android:lines="7"
+                        tools:ignore="Autofill,LabelFor" />
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <Space
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/relative_layout"
+        android:layout_below="@id/scroll_view" />
+
+    <RelativeLayout
+        android:id="@+id/relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/medium_dp"
+        android:layout_marginBottom="@dimen/medium_dp">
+
+        <Button
+            android:id="@+id/button_close"
+            style="@style/Button.Negative"
+            android:text="@string/close" />
+
+        <Button
+            android:id="@+id/button_submit"
+            style="@style/Button.Positive"
+            android:layout_alignParentEnd="true"
+            android:text="@string/services" />
+    </RelativeLayout>
+</RelativeLayout>

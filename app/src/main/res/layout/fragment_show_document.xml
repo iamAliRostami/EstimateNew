@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/medium_dp"
+    tools:context=".fragments.dialog.ShowDocumentFragment">
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:id="@+id/text_view_title"
+        style="@style/TitleSmall"
+        android:layout_toEndOf="@id/progress_bar"
+        android:text="@string/document_received" />
+
+    <GridView
+        android:id="@+id/grid_view_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/text_view_title"
+        android:background="@drawable/border_gray_3"
+        android:horizontalSpacing="@dimen/low_dp"
+        android:nestedScrollingEnabled="true"
+        android:numColumns="2"
+        android:padding="@dimen/low_dp"
+        android:verticalSpacing="@dimen/low_dp"
+        tools:listitem="@layout/item_image" />
+
+</RelativeLayout>

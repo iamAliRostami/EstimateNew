@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_white_1"
+    tools:context=".fragments.dialog.SearchFragment">
+
+    <LinearLayout
+        android:id="@+id/linear_layout_1"
+        style="@style/SearchLinearLayout">
+
+        <TextView
+            style="@style/SearchTextView"
+            android:text="@string/bill_id" />
+
+        <EditText
+            android:id="@+id/edit_text_bill_id"
+            style="@style/SearchEditText"
+            android:inputType="number"
+            tools:ignore="Autofill,LabelFor" />
+
+        <TextView
+            style="@style/SearchTextView"
+            android:text="@string/shomare_peygiri" />
+
+        <EditText
+            android:id="@+id/edit_text_track_number"
+            style="@style/SearchEditText"
+            android:inputType="number"
+            tools:ignore="Autofill,LabelFor" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_layout_2"
+        style="@style/SearchLinearLayout"
+        android:layout_below="@id/linear_layout_1">
+
+        <TextView
+            style="@style/SearchTextView"
+            android:text="@string/name" />
+
+        <EditText
+            android:id="@+id/edit_text_name"
+            style="@style/SearchEditText"
+            android:inputType="text"
+            tools:ignore="Autofill,LabelFor" />
+
+        <TextView
+            style="@style/SearchTextView"
+            android:text="@string/family" />
+
+        <EditText
+            android:id="@+id/edit_text_family"
+            style="@style/SearchEditText"
+            android:inputType="text"
+            tools:ignore="Autofill,LabelFor" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_layout_3"
+        style="@style/SearchLinearLayout"
+        android:layout_below="@id/linear_layout_2">
+
+        <TextView
+            style="@style/SearchTextView"
+            android:text="@string/nation_number" />
+
+        <EditText
+            android:id="@+id/edit_text_nation_number"
+            style="@style/SearchEditText"
+            android:inputType="number"
+            android:maxLength="10"
+            tools:ignore="Autofill,LabelFor" />
+
+        <TextView
+            style="@style/SearchTextView"
+            android:text="@string/mobile_number" />
+
+        <EditText
+            android:id="@+id/edit_text_mobile"
+            style="@style/SearchEditText"
+            android:inputType="phone"
+            android:maxLength="11"
+            tools:ignore="Autofill,LabelFor" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/SearchLinearLayout"
+        android:layout_below="@id/linear_layout_3">
+
+        <TextView
+            style="@style/SearchTextView"
+            android:text="@string/start_date" />
+
+        <TextView
+            android:id="@+id/text_view_start_date"
+            style="@style/SearchTextView"
+            android:background="@drawable/border_gray_3"
+            android:padding="@dimen/low_dp" />
+
+        <Button
+            android:id="@+id/button_search"
+            style="@style/ButtonSubmit.Fragment"
+            android:layout_gravity="center"
+            android:layout_margin="0dp"
+            android:background="@drawable/border_green_2"
+            android:text="@string/search"
+            android:textSize="@dimen/text_size_medium" />
+    </LinearLayout>
+</RelativeLayout>

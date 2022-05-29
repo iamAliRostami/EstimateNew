@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_white_1"
+    tools:context=".fragments.dialog.EnterBillFragment">
+
+
+    <TextView
+        style="@style/SearchTextView"
+        android:layout_weight="0.5"
+        android:text="@string/bill_id" />
+
+    <EditText
+        android:id="@+id/edit_text_search"
+        style="@style/SearchEditText"
+        android:inputType="number"
+        android:lines="1"
+        android:maxLength="13"
+        android:maxLines="1"
+        android:padding="@dimen/medium_dp"
+        android:singleLine="true"
+        tools:ignore="Autofill,LabelFor" />
+
+    <Button
+        android:id="@+id/button_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/low_dp"
+        android:background="@drawable/border_green_2"
+        android:text="@string/search"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium" />
+</LinearLayout>

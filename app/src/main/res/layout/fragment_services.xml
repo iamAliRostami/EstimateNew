@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.forms.ServicesFragment">
+
+    <TextView
+        android:id="@id/text_view_title"
+        style="@style/Title"
+        android:layout_centerHorizontal="true"
+        android:text="@string/services" />
+
+    <GridView
+        android:id="@+id/grid_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/relative_layout"
+        android:layout_below="@id/text_view_title"
+        android:background="@drawable/border_gray_2"
+        android:nestedScrollingEnabled="true"
+        android:numColumns="2"
+        tools:listitem="@layout/item_check_box" />
+
+    <RelativeLayout
+        android:id="@+id/relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/medium_dp"
+        android:layout_marginBottom="@dimen/medium_dp">
+
+        <Button
+            android:id="@+id/button_pre"
+            style="@style/Button.Negative"
+            android:text="@string/previous" />
+
+        <Button
+            android:id="@+id/button_submit"
+            style="@style/Button.Positive"
+            android:layout_alignParentEnd="true"
+            android:text="@string/moshakhasat_melk" />
+    </RelativeLayout>
+</RelativeLayout>
