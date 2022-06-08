@@ -135,7 +135,7 @@ public class SecondFormFragment extends Fragment {
                 checkIsNoEmpty(binding.editTextSangFazelab) &&
                 checkIsNoEmpty(binding.editTextOtherFazelab) &&
                 checkIsNoEmpty(binding.editTextOmqZirzamin) &&
-//                (checkIsNoEmpty(binding.editTextEshterak) && examinerDuty.isNewEnsheab) &&
+                (!examinerDuty.isNewEnsheab || checkIsNoEmpty(binding.editTextEshterak)) &&
                 checkIsNoEmpty(binding.editTextOmqFazelab);
     }
 
