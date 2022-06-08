@@ -903,74 +903,6 @@ public class PDFUtility {
         PdfPTable pdfPTableTemp = new PdfPTable(1);
         pdfPTableTemp.addCell(pdfPCellTemp);
         table.addCell(pdfPCellTemp);
-//        table.addCell(createTableRow(6, PdfPCell.ALIGN_CENTER, 1f, BaseColor.WHITE,
-//                dataTable.get(1)));
-//
-//        table.addCell(createTableRow(6, PdfPCell.ALIGN_CENTER, 1f, BaseColor.WHITE,
-//                dataTable.get(2)));
-//
-//        table.addCell(createTableRow(6, PdfPCell.ALIGN_CENTER, 1f, BaseColor.WHITE,
-//                dataTable.get(3)));
-
-//        table.addCell(createTableRow(3, PdfPCell.ALIGN_RIGHT, new float[]{1f, 1f, 3f},
-//                new float[]{BORDER, BORDER, PdfPCell.NO_BORDER},
-//                new BaseColor[]{BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE},
-//                dataTable.get(3)));
-//
-//        table.addCell(createTableRow(1, PdfPCell.ALIGN_RIGHT, 1, BaseColor.WHITE,
-//                dataTable.get(4)));
-//
-//        table.addCell(createTableRow(2, PdfPCell.ALIGN_CENTER, 1f,
-//                BaseColor.LIGHT_GRAY,
-//                dataTable.get(5)));
-//        for (int i = 0; i < 8; i++)
-//            table.addCell(createTableRow(4, PdfPCell.ALIGN_CENTER, new float[]{1f, 1f, 1f, 1f},
-//                    new float[]{BORDER, BORDER, BORDER, PdfPCell.NO_BORDER},
-//                    new BaseColor[]{BaseColor.WHITE, BaseColor.WHITE, BaseColor.LIGHT_GRAY, BaseColor.WHITE},
-//                    dataTable.get(6 + i)));
-//
-//        table.addCell(createTableRow(3, PdfPCell.ALIGN_RIGHT, new float[]{2f, 1f, 1f},
-//                new float[]{BORDER, BORDER, PdfPCell.NO_BORDER},
-//                new BaseColor[]{BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE},
-//                dataTable.get(14)));
-//
-//        for (int i = 0; i < 8; i++)
-//            table.addCell(createTableRow(5, PdfPCell.ALIGN_CENTER, 1f, BaseColor.WHITE,
-//                    dataTable.get(15 + i)));
-//
-//        table.addCell(createTableRow(5, PdfPCell.ALIGN_CENTER, new float[]{1f, 1f, 1f, 1f, 1f},
-//                new float[]{PdfPCell.NO_BORDER, PdfPCell.NO_BORDER, BORDER, BORDER, PdfPCell.NO_BORDER},
-//                new BaseColor[]{BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE},
-//                dataTable.get(23)));
-//        table.addCell(createTableRow(5, PdfPCell.ALIGN_CENTER, new float[]{1f, 1f, 1f, 1f, 1f},
-//                new float[]{PdfPCell.NO_BORDER, PdfPCell.NO_BORDER, BORDER, BORDER, PdfPCell.NO_BORDER},
-//                new BaseColor[]{BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE},
-//                dataTable.get(24)));
-//
-//        table.addCell(createTableRow(9, PdfPCell.ALIGN_CENTER, new float[]{1f, 1f, 1f, 1f, 1f, 1f, 1f, 1f, 2f},
-//                new float[]{BORDER, BORDER, BORDER, BORDER, BORDER, BORDER, BORDER, BORDER, PdfPCell.NO_BORDER},
-//                new BaseColor[]{BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE},
-//                dataTable.get(25)));
-//
-//        table.addCell(createTableRow(9, PdfPCell.ALIGN_CENTER, new float[]{1f, 1f, 1f, 1f, 1f, 1f, 1f, 1f, 2f},
-//                new float[]{BORDER, BORDER, BORDER, BORDER, BORDER, BORDER, BORDER, BORDER, PdfPCell.NO_BORDER},
-//                new BaseColor[]{BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE},
-//                dataTable.get(26)));
-//
-//        table.addCell(createTableRow(3, PdfPCell.ALIGN_RIGHT, new float[]{1f, 1f, 3f},
-//                new float[]{PdfPCell.NO_BORDER, PdfPCell.NO_BORDER, PdfPCell.NO_BORDER},
-//                new BaseColor[]{BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE},
-//                dataTable.get(27)));
-//
-//        table.addCell(createTableRow(3, PdfPCell.ALIGN_RIGHT, new float[]{1f, 1f, 3f},
-//                new float[]{PdfPCell.NO_BORDER, PdfPCell.NO_BORDER, PdfPCell.NO_BORDER},
-//                new BaseColor[]{BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE},
-//                dataTable.get(28)));
-//
-//        table.addCell(createTableRow(1, PdfPCell.ALIGN_RIGHT, 1, BaseColor.WHITE,
-//                dataTable.get(29)));
-//TODO
-
 
         return table;
     }
@@ -1065,7 +997,8 @@ public class PDFUtility {
         signTable.addCell(tableTemp);
 
         if (bitmaps != null && bitmaps.length > 0) {
-            final Image sign = getImageFromBitmap(bitmaps[0]);
+            //
+            final Image sign = getImageFromBitmap(bitmaps[1]);
 
             final PdfPCell signCell = new PdfPCell(sign);
             signCell.setBorder(PdfPCell.NO_BORDER);
@@ -1092,7 +1025,7 @@ public class PDFUtility {
         signTable.addCell(pdfPCellTemp);
 
         if (bitmaps != null && bitmaps.length > 0) {
-            final Image sign = getImageFromBitmap(bitmaps[0]);
+            final Image sign = getImageFromBitmap(bitmaps[1]);
             if (sign != null) sign.setAlignment(Element.ALIGN_CENTER);
             final PdfPCell signCell = new PdfPCell(sign);
             signCell.setHorizontalAlignment(Element.ALIGN_CENTER);

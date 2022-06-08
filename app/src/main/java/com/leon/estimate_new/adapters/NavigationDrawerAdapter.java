@@ -17,10 +17,8 @@ import java.util.List;
 
 public class NavigationDrawerAdapter extends RecyclerView.Adapter<DrawerItemHolder> {
     private final List<DrawerItem> drawerItemList;
-    private final Context context;
 
-    public NavigationDrawerAdapter(Context context, List<DrawerItem> listItems) {
-        this.context = context;
+    public NavigationDrawerAdapter(List<DrawerItem> listItems) {
         this.drawerItemList = listItems;
     }
 
@@ -36,15 +34,6 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<DrawerItemHold
     @Override
     public void onBindViewHolder(@NonNull DrawerItemHolder holder, int position) {
         final DrawerItem drawerItem = drawerItemList.get(position);
-//        if (position == EXIT_POSITION) {
-//            holder.textViewTitle.setTextColor(ContextCompat.getColor(context, R.color.red));
-//        } else if (position == POSITION) {
-//            final TypedValue typedValue = new TypedValue();
-//            final Resources.Theme theme = context.getTheme();
-//            theme.resolveAttribute(android.R.attr.textColorSecondary, typedValue, true);
-//            holder.textViewTitle.setTextColor(typedValue.data);
-//            holder.relativeLayout.setBackground(ContextCompat.getDrawable(context, R.drawable.border_red_3));
-//        }
         holder.imageViewIcon.setImageDrawable(drawerItem.getDrawable());
         holder.textViewTitle.setText(drawerItem.getItemName());
     }

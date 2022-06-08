@@ -128,7 +128,6 @@ class UploadImageIncomplete implements ICallbackIncomplete<UploadImage> {
 
     @Override
     public void executeIncomplete(Response<UploadImage> response) {
-        //TODO
         final CustomErrorHandling errorHandling = new CustomErrorHandling(context);
         final String error = errorHandling.getErrorMessageDefault(response);
         new CustomDialogModel(Yellow, context, error, context.getString(R.string.dear_user),

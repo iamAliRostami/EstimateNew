@@ -166,7 +166,7 @@ public abstract class BaseActivity extends AppCompatActivity implements
         final List<DrawerItem> dataList = DrawerItem.createItemList(
                 getResources().getStringArray(R.array.menu),
                 getResources().obtainTypedArray(R.array.icons));
-        final NavigationDrawerAdapter adapter = new NavigationDrawerAdapter(this, dataList);
+        final NavigationDrawerAdapter adapter = new NavigationDrawerAdapter(dataList);
         binding.recyclerView.setAdapter(adapter);
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(MyApplication.getContext()));
         binding.recyclerView.setNestedScrollingEnabled(true);

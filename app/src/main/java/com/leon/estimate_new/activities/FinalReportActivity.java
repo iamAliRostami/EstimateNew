@@ -148,7 +148,7 @@ public class FinalReportActivity extends AppCompatActivity {
             bitmaps.add(2, (Bitmap) objects[0]);
             licenceRows = (List<String[]>) objects[1];
         }
-        if (finalSubmit) sendImages();
+//        if (finalSubmit) sendImages();
     }
 
     private void finalSubmit() {

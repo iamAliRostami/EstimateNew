@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidStudioProjects/EstimateNew/app/src/main/res/drawable/border_blue_1.xml" value="0.178" />
+        <entry key="..\:/AndroidStudioProjects/EstimateNew/app/src/main/res/layout/activity_base.xml" value="0.24375" />
+        <entry key="..\:/AndroidStudioProjects/EstimateNew/app/src/main/res/layout/activity_final_report.xml" value="0.24375" />
+        <entry key="..\:/AndroidStudioProjects/EstimateNew/app/src/main/res/layout/activity_login.xml" value="0.24375" />
+        <entry key="..\:/AndroidStudioProjects/EstimateNew/app/src/main/res/layout/activity_main.xml" value="0.1358695652173913" />
+        <entry key="..\:/AndroidStudioProjects/EstimateNew/app/src/main/res/layout/base_app_bar.xml" value="0.24375" />
+        <entry key="..\:/AndroidStudioProjects/EstimateNew/app/src/main/res/layout/base_content.xml" value="0.24375" />
+        <entry key="..\:/AndroidStudioProjects/EstimateNew/app/src/main/res/layout/dialog_text_input.xml" value="0.24375" />
+        <entry key="..\:/AndroidStudioProjects/EstimateNew/app/src/main/res/layout/fragment_base_info.xml" value="0.24375" />
+        <entry key="..\:/AndroidStudioProjects/EstimateNew/app/src/main/res/layout/fragment_edit_map.xml" value="0.24375" />
+        <entry key="..\:/AndroidStudioProjects/EstimateNew/app/src/main/res/layout/fragment_map_description.xml" value="0.24375" />
+        <entry key="..\:/AndroidStudioProjects/EstimateNew/app/src/main/res/layout/item_dropdown_menu.xml" value="0.24375" />
+        <entry key="..\:/AndroidStudioProjects/EstimateNew/app/src/main/res/layout/item_navigation_drawer.xml" value="0.24375" />
+        <entry key="..\:/AndroidStudioProjects/EstimateNew/app/src/main/res/layout/toolbar.xml" value="0.24375" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

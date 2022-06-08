@@ -9,7 +9,6 @@ import com.leon.estimate_new.utils.custom_dialog.LovelyStandardDialog;
 
 import dagger.Component;
 
-//@Singleton
 @Component(modules = {CustomDialogModule.class, LocationTrackingModule.class})
 public interface ActivityComponent {
 
