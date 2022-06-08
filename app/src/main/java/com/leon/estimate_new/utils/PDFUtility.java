@@ -501,6 +501,7 @@ public class PDFUtility {
         pdfPCellTemp.setBorder(PdfPCell.NO_BORDER);
         row.addCell(pdfPCellTemp);
 
+
         final PdfPTable mapTable = new PdfPTable(1);
         mapTable.setWidthPercentage(100);
         mapTable.getDefaultCell().setBorder(PdfPCell.NO_BORDER);
@@ -518,12 +519,47 @@ public class PDFUtility {
         mapCell.setBorder(PdfPCell.NO_BORDER);
         mapTable.addCell(mapCell);
 
-        PdfPCell cell = new PdfPCell(mapTable);
+        temp = new Paragraph(dataTable.get(8)[1].concat(" :X"), FONT_EN);
+        pdfPCellTemp = new PdfPCell(temp);
+        pdfPCellTemp.setHorizontalAlignment(Element.ALIGN_RIGHT);
+        pdfPCellTemp.setPadding(4f);
+        pdfPCellTemp.setBorder(PdfPCell.NO_BORDER);
+        PdfPTable pdfPTable = new PdfPTable(4);
+        pdfPTable.setWidths(new float[]{3f, 3f, 1f, 2f});
+        pdfPTable.addCell(pdfPCellTemp);
+
+        temp = new Paragraph(dataTable.get(8)[0].concat(" :Y"), FONT_EN);
+        pdfPCellTemp = new PdfPCell(temp);
+        pdfPCellTemp.setHorizontalAlignment(Element.ALIGN_CENTER);
+        pdfPCellTemp.setPadding(4f);
+        pdfPCellTemp.setBorder(PdfPCell.NO_BORDER);
+        pdfPTable.addCell(pdfPCellTemp);
+
+        temp = new Paragraph(" :UTM ", FONT_EN);
+        pdfPCellTemp = new PdfPCell(temp);
+        pdfPCellTemp.setHorizontalAlignment(Element.ALIGN_CENTER);
+        pdfPCellTemp.setPadding(4f);
+        pdfPCellTemp.setBorder(PdfPCell.NO_BORDER);
+        pdfPTable.addCell(pdfPCellTemp);
+
+        temp = new Paragraph(pe.process(" نقطه "), FONT_TEXT_ITALIC);
+        pdfPCellTemp = new PdfPCell(temp);
+        pdfPCellTemp.setHorizontalAlignment(Element.ALIGN_LEFT);
+        pdfPCellTemp.setPadding(4f);
+        pdfPCellTemp.setBorder(PdfPCell.NO_BORDER);
+        pdfPTable.addCell(pdfPCellTemp);
+
+        pdfPTableTemp.addCell(pdfPTable);
+        pdfPCell.setBorder(PdfPCell.NO_BORDER);
+
+        mapTable.addCell(pdfPTable);
+
+        final PdfPCell cell = new PdfPCell(mapTable);
         cell.setUseAscender(true);
         cell.setPadding(4f);
         row.addCell(cell);
 
-        row.addCell(createPrivilegeSignBox(dataTable.get(8)[0], bitmaps));
+        row.addCell(createPrivilegeSignBox(dataTable.get(9)[0], bitmaps));
 
 
         table.addCell(row);

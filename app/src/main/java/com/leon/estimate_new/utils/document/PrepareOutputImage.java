@@ -278,6 +278,10 @@ public class PrepareOutputImage extends BaseAsync {
                     examinerDuty.faseleKhakiF + examinerDuty.faseleSangF)};
             licenceRows.add(rowString);
 
+
+            rowString = new String[]{String.valueOf(examinerDuty.x1), String.valueOf(examinerDuty.y1)};
+            licenceRows.add(rowString);
+
             rowString = new String[]{examinerDuty.examinerName};
 
             licenceRows.add(rowString);
