@@ -19,6 +19,7 @@ public class CalculationUserInput {
     public String radif;
     public int requestType;
     public String parNumber;
+    public String licenceNumber;
     public String billId;
     public String neighbourBillId;
     public int zoneId;
@@ -103,7 +104,7 @@ public class CalculationUserInput {
     public void fillCalculationUserInput(ExaminerDuties examinerDuties) {
         trackingId = examinerDuties.trackingId;
         requestType = Integer.parseInt(examinerDuties.requestType);
-        parNumber = examinerDuties.parNumber;
+        licenceNumber = examinerDuties.licenceNumber;
         billId = examinerDuties.billId;
         neighbourBillId = examinerDuties.neighbourBillId;
         notificationMobile = examinerDuties.notificationMobile;
@@ -127,7 +128,7 @@ public class CalculationUserInput {
         arzeshMelk = examinerDuty.arzeshMelk;
         tedadTaxfif = examinerDuty.tedadTaxfif;
         zarfiatQarardadi = examinerDuty.zarfiatQarardadiNew;
-        parNumber = examinerDuty.parNumber;
+        licenceNumber = examinerDuty.licenceNumber;
         karbariId = examinerDuty.karbariId;
         noeVagozariId = examinerDuty.noeVagozariId;
         qotrEnsheabId = examinerDuty.qotrEnsheabId;

@@ -82,6 +82,12 @@ public class ServicesFragment extends Fragment {
 
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
+
     public interface Callback {
         void setOnPreClickListener(int position);
 

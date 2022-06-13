@@ -112,7 +112,7 @@ public class PrepareOutputImage extends BaseAsync {
         temp.add(rowString);
 
         rowString = new String[]{String.valueOf(examinerDuty.sanadNumber), "شماره سند",
-                examinerDuty.parNumber, "شماره پروانه", examinerDuty.trackNumber, "شماره پیگیری"};
+                examinerDuty.licenceNumber, "شماره پروانه", examinerDuty.trackNumber, "شماره پیگیری"};
         temp.add(rowString);
 
         rowString = new String[]{examinerDuty.fatherName, "نام پدر", examinerDuty.sureName,
@@ -214,7 +214,7 @@ public class PrepareOutputImage extends BaseAsync {
             temp.add(rowString);
         }
 
-        rowString = new String[]{examinerDuty.examinerName};
+        rowString = new String[]{examinerDuty.examinerName,examinerDuty.zoneTitle};
         temp.add(rowString);
         return temp;
     }
@@ -256,7 +256,7 @@ public class PrepareOutputImage extends BaseAsync {
 
             rowString = new String[]{examinerDuty.nameAndFamily, examinerDuty.fatherName,
                     examinerDuty.nationalId, examinerDuty.mobile != null ? examinerDuty.mobile :
-                    examinerDuty.moshtarakMobile, examinerDuty.operation, examinerDuty.parNumber,
+                    examinerDuty.moshtarakMobile, examinerDuty.operation, examinerDuty.licenceNumber,
                     examinerDuty.sodurDate};
             licenceRows.add(rowString);
 

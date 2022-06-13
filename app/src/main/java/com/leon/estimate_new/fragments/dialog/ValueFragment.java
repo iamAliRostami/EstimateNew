@@ -164,7 +164,8 @@ public class ValueFragment extends DialogFragment {
             if (dis) {
                 baseInfoFragment.setValue(values, count,
                         blockTitles.get(binding.spinner1.getSelectedItemPosition()),
-                        gozarTitles.get(binding.spinner2.getSelectedItemPosition()));
+                        String.valueOf(arzeshdaraei.formulas.get(binding.spinner2.getSelectedItemPosition()).gozarFrom)
+                                .concat(" - ").concat(String.valueOf(arzeshdaraei.formulas.get(binding.spinner2.getSelectedItemPosition()).gozarTo)));
                 dismiss();
             }
         } else {

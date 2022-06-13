@@ -158,12 +158,18 @@ public class PersonalFragment extends Fragment {
 
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
+
     public interface Callback {
 
-        public void setTitle(String title, boolean showMenu);
+        void setTitle(String title, boolean showMenu);
 
-        public void setPersonalInfo(CalculationUserInput calculationUserInput);
+        void setPersonalInfo(CalculationUserInput calculationUserInput);
 
-        public ExaminerDuties getExaminerDuty();
+        ExaminerDuties getExaminerDuty();
     }
 }

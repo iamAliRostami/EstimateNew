@@ -217,4 +217,9 @@ public class DutiesListFragment extends Fragment implements SearchFragment.Callb
         super.onResume();
         if (resume) new PrepareListData(requireContext(), this).execute(requireActivity());
     }
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
 }

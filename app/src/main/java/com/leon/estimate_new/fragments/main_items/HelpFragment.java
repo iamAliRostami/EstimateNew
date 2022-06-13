@@ -111,4 +111,9 @@ public class HelpFragment extends Fragment {
             output.close();
         }
     }
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
 }

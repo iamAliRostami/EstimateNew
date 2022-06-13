@@ -1,12 +1,15 @@
 package com.leon.estimate_new.di.view_model;
 
+import static com.leon.estimate_new.helpers.MyApplication.getApplicationComponent;
+import static com.leon.estimate_new.utils.DifferentCompanyManager.getActiveCompanyName;
+import static com.leon.estimate_new.utils.DifferentCompanyManager.getBaseUrl;
+import static com.leon.estimate_new.utils.DifferentCompanyManager.getLocalBaseUrl;
+
 import android.content.Context;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.leon.estimate_new.R;
-import com.leon.estimate_new.helpers.MyApplication;
-import com.leon.estimate_new.utils.DifferentCompanyManager;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -40,14 +43,14 @@ public final class NetworkHelperModel {
      * with cache
      */
     public static Retrofit getInstance(Context context) {
-        int cacheSize = 50 * 1024 * 1024;// 50 MB
-        File httpCacheDirectory = new File(context.getCacheDir(), context.getString(R.string.cache_folder));
-        Cache cache = new Cache(httpCacheDirectory, cacheSize);
+        final int cacheSize = 50 * 1024 * 1024;// 50 MB
+        final File httpCacheDirectory = new File(context.getCacheDir(), context.getString(R.string.cache_folder));
+        final Cache cache = new Cache(httpCacheDirectory, cacheSize);
 
-        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+        final HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.level(HttpLoggingInterceptor.Level.BODY);
 
-        OkHttpClient client = new OkHttpClient.Builder().readTimeout(READ_TIMEOUT, TIME_UNIT)
+        final OkHttpClient client = new OkHttpClient.Builder().readTimeout(READ_TIMEOUT, TIME_UNIT)
                 .writeTimeout(WRITE_TIMEOUT, TIME_UNIT).connectTimeout(CONNECT_TIMEOUT, TIME_UNIT)
                 .retryOnConnectionFailure(RETRY_ENABLED).addInterceptor(chain ->
                         chain.proceed(chain.request().newBuilder().build()))
@@ -55,19 +58,16 @@ public final class NetworkHelperModel {
 //                .addInterceptor(new HttpLoggingInterceptor()
 //                        .setLevel(HttpLoggingInterceptor.Level.BODY))
                 .cache(cache).build();
-        return new Retrofit.Builder()
-                .baseUrl(DifferentCompanyManager.getBaseUrl(
-                        DifferentCompanyManager.getActiveCompanyName()))
-                .client(client).addConverterFactory(GsonConverterFactory
-                        .create(new GsonBuilder().setLenient().create())).build();
+        return new Retrofit.Builder().baseUrl(getBaseUrl(getActiveCompanyName())).client(client)
+                .addConverterFactory(GsonConverterFactory.create(new GsonBuilder().setLenient()
+                        .create())).build();
     }
 
     @Inject
     public OkHttpClient getHttpClient() {
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+        final HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.level(HttpLoggingInterceptor.Level.BODY);
-        return new OkHttpClient
-                .Builder()
+        return new OkHttpClient.Builder()
                 .readTimeout(READ_TIMEOUT, TIME_UNIT)
                 .writeTimeout(WRITE_TIMEOUT, TIME_UNIT)
                 .connectTimeout(CONNECT_TIMEOUT, TIME_UNIT)
@@ -77,16 +77,12 @@ public final class NetworkHelperModel {
 
     @Inject
     public OkHttpClient getHttpClient(String... s) {
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+        final HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.level(HttpLoggingInterceptor.Level.BODY);
-        return new OkHttpClient
-                .Builder()
-                .readTimeout(READ_TIMEOUT, TIME_UNIT)
-                .writeTimeout(WRITE_TIMEOUT, TIME_UNIT)
-                .connectTimeout(CONNECT_TIMEOUT, TIME_UNIT)
-                .retryOnConnectionFailure(RETRY_ENABLED)
-                .addInterceptor(chain -> {
-                    Request request = chain.request().newBuilder()
+        return new OkHttpClient.Builder().readTimeout(READ_TIMEOUT, TIME_UNIT)
+                .writeTimeout(WRITE_TIMEOUT, TIME_UNIT).connectTimeout(CONNECT_TIMEOUT, TIME_UNIT)
+                .retryOnConnectionFailure(RETRY_ENABLED).addInterceptor(chain -> {
+                    final Request request = chain.request().newBuilder()
                             .addHeader("Authorization", "Bearer " + s[0])
                             .build();
                     return chain.proceed(request);
@@ -95,20 +91,18 @@ public final class NetworkHelperModel {
 
     @Inject
     public OkHttpClient getHttpClient(final int denominator, String... s) {
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+        final HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.level(HttpLoggingInterceptor.Level.BODY);
         if (denominator == 1) {
             return getHttpClient(s);
         }
         if (okHttpClient == null) {
-            okHttpClient = new OkHttpClient
-                    .Builder()
+            okHttpClient = new OkHttpClient.Builder()
                     .readTimeout(READ_TIMEOUT / denominator, TIME_UNIT)
                     .writeTimeout(WRITE_TIMEOUT / denominator, TIME_UNIT)
                     .connectTimeout(CONNECT_TIMEOUT, TIME_UNIT)
-                    .retryOnConnectionFailure(RETRY_ENABLED)
-                    .addInterceptor(chain -> {
-                        Request request = chain.request().newBuilder()
+                    .retryOnConnectionFailure(RETRY_ENABLED).addInterceptor(chain -> {
+                        final Request request = chain.request().newBuilder()
                                 .addHeader("Authorization", "Bearer " + s[0])
 //                                .addHeader("XSRF-TOKEN", s[1])
                                 .build();
@@ -121,25 +115,22 @@ public final class NetworkHelperModel {
 
     @Inject
     public Retrofit getInstance(boolean b, int denominator, String... s) {
-        String baseUrl = b ?
-                DifferentCompanyManager.getBaseUrl(DifferentCompanyManager.getActiveCompanyName()) :
-                DifferentCompanyManager.getLocalBaseUrl(DifferentCompanyManager.getActiveCompanyName());
+        final String baseUrl = b ? getBaseUrl(getActiveCompanyName()) :
+                getLocalBaseUrl(getActiveCompanyName());
         if (s.length == 0)
-            return new Retrofit.Builder()
-                    .baseUrl(baseUrl)
-                    .client(MyApplication.getApplicationComponent().NetworkHelperModel().getHttpClient())
+            return new Retrofit.Builder().baseUrl(baseUrl).client(getApplicationComponent()
+                            .NetworkHelperModel().getHttpClient())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                    .addConverterFactory(GsonConverterFactory.create(MyApplication.getApplicationComponent().Gson()))
-                    .addConverterFactory(ScalarsConverterFactory.create())
-                    .build();
+                    .addConverterFactory(GsonConverterFactory.create(getApplicationComponent().Gson()))
+                    .addConverterFactory(ScalarsConverterFactory.create()).build();
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
                     .baseUrl(baseUrl)
-                    .client(MyApplication.getApplicationComponent().NetworkHelperModel().getHttpClient(denominator, s))
+                    .client(getApplicationComponent().NetworkHelperModel().getHttpClient(denominator, s))
 //                    .client(s[1] != null ?
 //                            NetworkHelper.getHttpClient(denominator, s[0], s[1]) :
 //                            NetworkHelper.getHttpClient(denominator, s[0]))
-                    .addConverterFactory(GsonConverterFactory.create(MyApplication.getApplicationComponent().Gson()))
+                    .addConverterFactory(GsonConverterFactory.create(getApplicationComponent().Gson()))
                     .build();
         }
         return retrofit;
@@ -157,27 +148,21 @@ public final class NetworkHelperModel {
 
     @Inject
     public Retrofit getInstance(boolean b, String s, int readTimeout, int writeTimeout, int connectTimeout) {
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+        final HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.level(HttpLoggingInterceptor.Level.BODY);
-        String baseUrl = b ?
-                DifferentCompanyManager.getBaseUrl(DifferentCompanyManager.getActiveCompanyName()) :
-                DifferentCompanyManager.getLocalBaseUrl(DifferentCompanyManager.getActiveCompanyName());
-        return new Retrofit.Builder()
-                .baseUrl(baseUrl)
-                .client(new OkHttpClient.Builder()
-                        .readTimeout(readTimeout, TIME_UNIT)
-                        .writeTimeout(writeTimeout, TIME_UNIT)
+        final String baseUrl = b ?
+                getBaseUrl(getActiveCompanyName()) :
+                getLocalBaseUrl(getActiveCompanyName());
+        return new Retrofit.Builder().baseUrl(baseUrl).client(new OkHttpClient.Builder()
+                        .readTimeout(readTimeout, TIME_UNIT).writeTimeout(writeTimeout, TIME_UNIT)
                         .connectTimeout(connectTimeout, TIME_UNIT)
-                        .retryOnConnectionFailure(RETRY_ENABLED)
-                        .addInterceptor(chain -> {
-                            Request request = chain.request().newBuilder()
+                        .retryOnConnectionFailure(RETRY_ENABLED).addInterceptor(chain -> {
+                            final Request request = chain.request().newBuilder()
                                     .addHeader("Authorization", "Bearer " + s)
                                     .build();
                             return chain.proceed(request);
-                        })
-                        .addInterceptor(interceptor).build()
-                )
-                .addConverterFactory(GsonConverterFactory.create(MyApplication.getApplicationComponent().Gson()))
+                        }).addInterceptor(interceptor).build()
+                ).addConverterFactory(GsonConverterFactory.create(getApplicationComponent().Gson()))
                 .build();
     }
 

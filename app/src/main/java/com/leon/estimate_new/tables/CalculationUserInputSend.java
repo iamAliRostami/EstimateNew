@@ -86,7 +86,7 @@ public class CalculationUserInputSend {
         this.trackingId = calculationUserInput.trackingId;
         this.trackNumber = calculationUserInput.trackNumber;
         this.requestType = calculationUserInput.requestType;
-        this.parNumber = calculationUserInput.parNumber;
+        this.parNumber = calculationUserInput.licenceNumber;
         this.billId = calculationUserInput.billId;
         this.radif = calculationUserInput.radif;
         this.zoneId = calculationUserInput.zoneId;

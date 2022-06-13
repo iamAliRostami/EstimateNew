@@ -90,7 +90,7 @@ public class PDFUtility {
         pdfWriter.setRunDirection(PdfWriter.RUN_DIRECTION_RTL);
 
         document.open();
-        document.add(createHeaderOriginal(context));
+        document.add(createHeaderOriginal(context, items.get(items.size() - 1)[1]));
         document.add(createDataTable(items, bitmaps));
         document.close();
 
@@ -314,7 +314,7 @@ public class PDFUtility {
         return table;
     }
 
-    private static PdfPTable createHeaderOriginal(Context context) throws Exception {
+    private static PdfPTable createHeaderOriginal(final Context context, String zoneTitle) throws Exception {
         final PdfPTable table = new PdfPTable(3);
         final LanguageProcessor pe = new ArabicLigaturizer();
         table.setWidthPercentage(100);
@@ -332,6 +332,12 @@ public class PDFUtility {
             Paragraph temp = new Paragraph(pe.process("شرکت آب و فاضلاب استان اصفهان"), FONT_TITTER);
             temp.setAlignment(Element.ALIGN_CENTER);
             cell.addElement(temp);
+
+            zoneTitle = "امور آب و فاضلاب ".concat(zoneTitle);
+            temp = new Paragraph(pe.process(zoneTitle), FONT_TITTER);
+            temp.setAlignment(Element.ALIGN_CENTER);
+            cell.addElement(temp);
+
             temp = new Paragraph(pe.process("ارزیابی"), FONT_TITTER);
             temp.setAlignment(Element.ALIGN_CENTER);
             cell.addElement(temp);
@@ -753,12 +759,13 @@ public class PDFUtility {
                         BaseColor.WHITE, BaseColor.WHITE}, dataTable.get(5),
                 FONT_TEXT, FONT_TITLE, FONT_TITLE, FONT_TITLE, FONT_TITLE));
 
-        for (int i = 1; i < 9; i++)
+        for (int i = 1; i < 9; i++) {
             table.addCell(createTableRow(5, PdfPCell.ALIGN_CENTER, new float[]{1f, 1f, 1f, 1f, 1f},
                     new float[]{BORDER, BORDER, BORDER, BORDER, PdfPCell.NO_BORDER},
                     new BaseColor[]{BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE,
                             BaseColor.WHITE, BaseColor.WHITE}, dataTable.get(5 + i),
                     FONT_TEXT, FONT_TITLE, FONT_TEXT, FONT_TEXT, FONT_TITLE));
+        }
 
         table.addCell(createTableRow(6, PdfPCell.ALIGN_CENTER,
                 new float[]{1f, 1f, 2f, 1f, 2f, 2f},
@@ -775,7 +782,7 @@ public class PDFUtility {
                     dataTable.get(14 + i)));
 
         table.addCell(createTableRow(8, PdfPCell.ALIGN_CENTER,
-                new float[]{2f, 2f, 1f, 2f, 1f, 2f, 1f, 2f},
+                new float[]{2f, 2f, 2f, 2f, 1f, 2f, 1f, 2f},
                 new float[]{BORDER, BORDER, BORDER, BORDER, BORDER, BORDER, BORDER, PdfPCell.NO_BORDER},
                 new BaseColor[]{BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE,
                         BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE, BaseColor.WHITE},

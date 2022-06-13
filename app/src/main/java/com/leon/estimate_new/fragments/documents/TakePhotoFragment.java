@@ -241,6 +241,12 @@ public class TakePhotoFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
+
     public interface Callback {
         Bitmap getBitmap();
 
@@ -303,8 +309,6 @@ public class TakePhotoFragment extends Fragment {
             intent.putExtra(LICENCE_TITLE.getValue(), licenceTitleId);
             intent.putExtra(TRACK_NUMBER.getValue(), documentActivity.getTrackNumber());
             startActivity(intent);
-//            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-//            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             requireActivity().finish();
         }
     }

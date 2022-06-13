@@ -120,4 +120,9 @@ public class SendRequestFragment extends Fragment {
             binding.editTextNationNumber.setText("");
         });
     }
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
 }

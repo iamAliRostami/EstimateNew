@@ -124,9 +124,9 @@ public class BaseInfoFragment extends Fragment implements ValueFragment.Callback
                 && checkIsNoEmpty(binding.editTextTedadTejari)
                 && checkIsNoEmpty(binding.editTextTedadSaier)
                 && checkIsNoEmpty(binding.editTextTedadTakhfif)
-                && checkIsNoEmpty(binding.editTextSodurDate)
                 && checkIsNoEmpty(binding.editTextZarfiatQaradadi)
-                && checkIsNoEmpty(binding.editTextPariNumber)
+//                && checkIsNoEmpty(binding.editTextSodurDate)
+//                && checkIsNoEmpty(binding.editTextLicenceNumber)
                 && checkIsNoEmpty(binding.textViewArzeshMelk);
     }
 
@@ -156,7 +156,7 @@ public class BaseInfoFragment extends Fragment implements ValueFragment.Callback
         examinerDuty.arzeshMelk = Integer.parseInt(binding.textViewArzeshMelk.getText().toString());
         examinerDuty.tedadTaxfif = Integer.parseInt(binding.editTextTedadTakhfif.getText().toString());
         examinerDuty.zarfiatQarardadiNew = Integer.parseInt(binding.editTextZarfiatQaradadi.getText().toString());
-        examinerDuty.parNumber = binding.editTextPariNumber.getText().toString();
+        examinerDuty.licenceNumber = binding.editTextLicenceNumber.getText().toString();
         examinerDuty.karbariId = formActivity.getKarbariDictionary()
                 .get(binding.spinner1.getSelectedItemPosition()).id;
         examinerDuty.karbariS = formActivity.getKarbariDictionary()
@@ -259,7 +259,7 @@ public class BaseInfoFragment extends Fragment implements ValueFragment.Callback
         binding.editTextTedadTakhfif.setText(String.valueOf(examinerDuty.tedadTaxfif));
         binding.editTextZarfiatQaradadi.setText(examinerDuty.zarfiatQarardadiNew != null ?
                 String.valueOf(examinerDuty.zarfiatQarardadiNew) : String.valueOf(examinerDuty.zarfiatQarardadi));
-        binding.editTextPariNumber.setText(examinerDuty.parNumber);
+        binding.editTextLicenceNumber.setText(examinerDuty.licenceNumber);
         binding.editTextCodeKaf.setText(examinerDuty.codeKaf);
         binding.editTextSanadNumber.setText(String.valueOf(examinerDuty.sanadNumber));
         binding.editTextQarardad.setText(examinerDuty.qaradadNumber);
@@ -381,6 +381,12 @@ public class BaseInfoFragment extends Fragment implements ValueFragment.Callback
     @Override
     public void setTejariha(ArrayList<Tejariha> tejarihas) {
         formActivity.setTejarihas(tejarihas);
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 
     @Override

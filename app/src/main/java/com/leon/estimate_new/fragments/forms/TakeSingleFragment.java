@@ -1,4 +1,4 @@
-package com.leon.estimate_new.fragments.main_items;
+package com.leon.estimate_new.fragments.forms;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,17 +8,16 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.leon.estimate_new.databinding.FragmentUploadBinding;
-import com.leon.estimate_new.utils.uploading.UploadNavigated;
+import com.leon.estimate_new.databinding.FragmentTakeSingleBinding;
 
-public class UploadFragment extends Fragment {
-    private FragmentUploadBinding binding;
+public class TakeSingleFragment extends Fragment {
+    private FragmentTakeSingleBinding binding;
 
-    public UploadFragment() {
+    public TakeSingleFragment() {
     }
 
-    public static UploadFragment newInstance() {
-        return new UploadFragment();
+    public static TakeSingleFragment newInstance() {
+        return new TakeSingleFragment();
     }
 
     @Override
@@ -29,14 +28,23 @@ public class UploadFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentUploadBinding.inflate(inflater, container, false);
+
+        binding = FragmentTakeSingleBinding.inflate(inflater, container, false);
         initialize();
         return binding.getRoot();
     }
 
     private void initialize() {
-        binding.buttonUpload.setOnClickListener(v ->
-                new UploadNavigated(requireContext(), binding.buttonUpload).execute(requireActivity()));
+        setOnButtonsClickListener();
+    }
+
+    private void setOnButtonsClickListener() {
+        binding.buttonPre.setOnClickListener(v -> {
+
+        });
+        binding.buttonEditCrooki.setOnClickListener(v -> {
+
+        });
     }
 
     @Override

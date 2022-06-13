@@ -83,4 +83,10 @@ public class HomeFragment extends Fragment {
         super.onDestroy();
         binding.mapView.dispose();
     }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
 }

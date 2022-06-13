@@ -1,5 +1,7 @@
 package com.leon.estimate_new.base_items;
 
+import static com.leon.estimate_new.enums.SharedReferenceKeys.DISPLAY_NAME;
+import static com.leon.estimate_new.enums.SharedReferenceKeys.USER_CODE;
 import static com.leon.estimate_new.helpers.Constants.GPS_CODE;
 import static com.leon.estimate_new.helpers.Constants.LOCATION_PERMISSIONS;
 import static com.leon.estimate_new.helpers.Constants.PHOTO_PERMISSIONS;
@@ -10,6 +12,8 @@ import static com.leon.estimate_new.helpers.MyApplication.getApplicationComponen
 import static com.leon.estimate_new.helpers.MyApplication.setActivityComponent;
 import static com.leon.estimate_new.utils.PermissionManager.checkCameraPermission;
 import static com.leon.estimate_new.utils.PermissionManager.checkLocationPermission;
+import static com.leon.estimate_new.utils.PermissionManager.enableNetwork;
+import static com.leon.estimate_new.utils.PermissionManager.gpsEnabled;
 import static com.leon.estimate_new.utils.PermissionManager.isNetworkAvailable;
 
 import android.annotation.SuppressLint;
@@ -43,7 +47,6 @@ import com.leon.estimate_new.databinding.ActivityBaseBinding;
 import com.leon.estimate_new.di.view_model.LocationTrackingGoogle;
 import com.leon.estimate_new.di.view_model.LocationTrackingGps;
 import com.leon.estimate_new.di.view_model.MyDatabaseClientModel;
-import com.leon.estimate_new.enums.SharedReferenceKeys;
 import com.leon.estimate_new.helpers.MyApplication;
 import com.leon.estimate_new.infrastructure.ISharedPreferenceManager;
 import com.leon.estimate_new.utils.CustomToast;
@@ -71,11 +74,11 @@ public abstract class BaseActivity extends AppCompatActivity implements
         initializeBase();
         if (isNetworkAvailable(getApplicationContext()))
             checkPermissions();
-        else PermissionManager.enableNetwork(this);
+        else enableNetwork(this);
     }
 
     private void checkPermissions() {
-        if (PermissionManager.gpsEnabled(this))
+        if (gpsEnabled(this))
             if (!checkLocationPermission(getApplicationContext())) {
                 askLocationPermission();
             } else if (!checkCameraPermission(getApplicationContext())) {
@@ -86,7 +89,7 @@ public abstract class BaseActivity extends AppCompatActivity implements
     }
 
     private void askStoragePermission() {
-        PermissionListener permissionlistener = new PermissionListener() {
+        final PermissionListener permissionlistener = new PermissionListener() {
             @Override
             public void onPermissionGranted() {
                 new CustomToast().info(getString(R.string.access_granted));
@@ -141,9 +144,8 @@ public abstract class BaseActivity extends AppCompatActivity implements
         setActivityComponent(activity);
         MyDatabaseClientModel.migration(activity);
         final TextView textView = findViewById(R.id.text_view_version);
-        textView.setText(sharedPreferenceManager.getStringData(SharedReferenceKeys.DISPLAY_NAME.getValue())
-                .concat(" (").concat(sharedPreferenceManager
-                        .getStringData(SharedReferenceKeys.USER_CODE.getValue())).concat(")"));
+        textView.setText(sharedPreferenceManager.getStringData(DISPLAY_NAME.getValue())
+                .concat(" (").concat(sharedPreferenceManager.getStringData(USER_CODE.getValue())).concat(")"));
         binding.textViewVersion.setText(getString(R.string.version).concat(" ").concat(BuildConfig.VERSION_NAME));
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -202,7 +204,7 @@ public abstract class BaseActivity extends AppCompatActivity implements
             if (requestCode == REQUEST_WIFI_CODE) {
                 if (isNetworkAvailable(getApplicationContext()))
                     checkPermissions();
-                else PermissionManager.enableNetwork(this);
+                else enableNetwork(this);
             }
         }
     }

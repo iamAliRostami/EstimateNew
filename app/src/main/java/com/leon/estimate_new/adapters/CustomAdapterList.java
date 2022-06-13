@@ -1,6 +1,9 @@
 package com.leon.estimate_new.adapters;
 
 import static com.leon.estimate_new.enums.BundleEnum.EXAMINER_DUTY;
+import static com.leon.estimate_new.enums.BundleEnum.LICENCE_TITLE;
+import static com.leon.estimate_new.enums.BundleEnum.OTHER_TITLE;
+import static com.leon.estimate_new.enums.BundleEnum.TITLE;
 import static com.leon.estimate_new.enums.SharedReferenceKeys.TRACK_NUMBER;
 import static com.leon.estimate_new.helpers.MyApplication.getPreferenceManager;
 
@@ -19,6 +22,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
 import com.leon.estimate_new.R;
+import com.leon.estimate_new.activities.FinalReportActivity;
 import com.leon.estimate_new.activities.FormActivity;
 import com.leon.estimate_new.adapters.holders.ViewHolderList;
 import com.leon.estimate_new.tables.ExaminerDuties;
@@ -69,7 +73,7 @@ public class CustomAdapterList extends RecyclerView.Adapter<ViewHolderList> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderList viewHolder, int i) {
-        ExaminerDuties examinerDuties = getItem(i);
+        final ExaminerDuties examinerDuties = getItem(i);
 
         viewHolder.textViewName.setText(examinerDuties.nameAndFamily != null &&
                 examinerDuties.nameAndFamily.trim().length() > 0 ?

@@ -98,7 +98,11 @@ public class BrightnessContrastFragment extends Fragment {
             documentActivity = (Callback) context;
         }
     }
-
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
     public interface Callback {
         Bitmap getBitmap();
 

@@ -42,4 +42,9 @@ public class DownloadFragment extends Fragment {
         binding.buttonDownload.setOnClickListener(v ->
                 new DownloadData(requireContext(), binding.buttonDownload).execute(requireActivity()));
     }
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
 }

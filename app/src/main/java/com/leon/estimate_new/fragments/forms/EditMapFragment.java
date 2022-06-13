@@ -100,7 +100,11 @@ public class EditMapFragment extends Fragment {
             formActivity = (Callback) context;
         }
     }
-
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
     public interface Callback {
         void setOnPreClickListener(int position);
 

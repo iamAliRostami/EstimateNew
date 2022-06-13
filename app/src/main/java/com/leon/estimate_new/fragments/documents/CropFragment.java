@@ -53,7 +53,9 @@ public class CropFragment extends Fragment {
 
     public static CropFragment newInstance() {
         return new CropFragment();
-    }    @SuppressLint("NonConstantResourceId")
+    }
+
+    @SuppressLint("NonConstantResourceId")
     private final View.OnClickListener onClickListener = view -> {
         switch (view.getId()) {
             case R.id.button_close:
@@ -265,6 +267,12 @@ public class CropFragment extends Fragment {
         if (context instanceof Activity) {
             documentActivity = (Callback) context;
         }
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 
     public interface Callback {

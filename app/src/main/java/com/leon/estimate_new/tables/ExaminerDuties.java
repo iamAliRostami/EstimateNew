@@ -29,6 +29,7 @@ public class ExaminerDuties {
     public String trackingId;
     public String requestType;
     public String parNumber;
+    public String licenceNumber;
     public String zoneId;
     public String callerId;
     public String zoneTitle;

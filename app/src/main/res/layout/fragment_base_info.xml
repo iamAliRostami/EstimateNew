@@ -221,7 +221,7 @@
                         android:text="@string/parvane_number" />
 
                     <EditText
-                        android:id="@+id/edit_text_pari_number"
+                        android:id="@+id/edit_text_licence_number"
                         style="@style/EditTextForm"
                         android:layout_width="0dp"
                         android:layout_weight="1"
